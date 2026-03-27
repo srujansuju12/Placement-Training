@@ -1,0 +1,17 @@
+package pgm5;
+
+public class faaaa
+{
+	public static void main(String[] args) 
+	{
+		int i;
+		int j;
+		for(i=1;i<=3;i++){
+			for(j=1;j<=3;j++) {
+				System.out.println("Hello world");
+			}
+			System.out.println("your cutie");
+		}
+	}
+
+}
