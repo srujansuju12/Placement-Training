@@ -1,173 +1,24 @@
-import tensorflow as tf
-import numpy as np
-model = tf.keras.models.load_model("char_rnn_model.keras")
+package pgm5;
+import java.util.Scanner;
 
-seq_length=3
+public class zz {
+    public static void main(String[] args) {
+    	Scanner sc = new Scanner(System.in);
+    	
+    	System.out.println("Enter age");
+    	int age =sc.nextInt();
+        
+        if(age>18)
+        {
+        	System.out.println("Elder one");
+        }else if(age<60) {
+        	System.out.println("older one");
+        }
+        else if(age>10)
+        {
+        	System.out.println("Younger one");
+        }
+    }
+}
 
-start_seq = "Hello"
-generated_text = start_seq
-
-char_to_index={' ': 0,
- '!': 1,
- '"': 2,
- "'": 3,
- '(': 4,
- ')': 5,
- ',': 6,
- '-': 7,
- '.': 8,
- '/': 9,
- '0': 10,
- '1': 11,
- '2': 12,
- '3': 13,
- '5': 14,
- '6': 15,
- '7': 16,
- '8': 17,
- '9': 18,
- ':': 19,
- '<': 20,
- '>': 21,
- 'A': 22,
- 'B': 23,
- 'C': 24,
- 'D': 25,
- 'E': 26,
- 'F': 27,
- 'G': 28,
- 'H': 29,
- 'I': 30,
- 'J': 31,
- 'K': 32,
- 'L': 33,
- 'M': 34,
- 'N': 35,
- 'O': 36,
- 'P': 37,
- 'R': 38,
- 'S': 39,
- 'T': 40,
- 'U': 41,
- 'V': 42,
- 'W': 43,
- 'X': 44,
- 'Y': 45,
- 'Z': 46,
- 'a': 47,
- 'b': 48,
- 'c': 49,
- 'd': 50,
- 'e': 51,
- 'f': 52,
- 'g': 53,
- 'h': 54,
- 'i': 55,
- 'j': 56,
- 'k': 57,
- 'l': 58,
- 'm': 59,
- 'n': 60,
- 'o': 61,
- 'p': 62,
- 'q': 63,
- 'r': 64,
- 's': 65,
- 't': 66,
- 'u': 67,
- 'v': 68,
- 'w': 69,
- 'x': 70,
- 'y': 71,
- 'z': 72,
- '\x96': 73,
- 'é': 74}
-index_to_char={0: ' ',
- 1: '!',
- 2: '"',
- 3: "'",
- 4: '(',
- 5: ')',
- 6: ',',
- 7: '-',
- 8: '.',
- 9: '/',
- 10: '0',
- 11: '1',
- 12: '2',
- 13: '3',
- 14: '5',
- 15: '6',
- 16: '7',
- 17: '8',
- 18: '9',
- 19: ':',
- 20: '<',
- 21: '>',
- 22: 'A',
- 23: 'B',
- 24: 'C',
- 25: 'D',
- 26: 'E',
- 27: 'F',
- 28: 'G',
- 29: 'H',
- 30: 'I',
- 31: 'J',
- 32: 'K',
- 33: 'L',
- 34: 'M',
- 35: 'N',
- 36: 'O',
- 37: 'P',
- 38: 'R',
- 39: 'S',
- 40: 'T',
- 41: 'U',
- 42: 'V',
- 43: 'W',
- 44: 'X',
- 45: 'Y',
- 46: 'Z',
- 47: 'a',
- 48: 'b',
- 49: 'c',
- 50: 'd',
- 51: 'e',
- 52: 'f',
- 53: 'g',
- 54: 'h',
- 55: 'i',
- 56: 'j',
- 57: 'k',
- 58: 'l',
- 59: 'm',
- 60: 'n',
- 61: 'o',
- 62: 'p',
- 63: 'q',
- 64: 'r',
- 65: 's',
- 66: 't',
- 67: 'u',
- 68: 'v',
- 69: 'w',
- 70: 'x',
- 71: 'y',
- 72: 'z',
- 73: '\x96',
- 74: 'é'}
-start_seq = "Hello"
-general_text = start_seq
-for i in range(100):
-    input_sequence = generated_text[-seq_length:]
-    x = np.array([[char_to_index[char] for char in input_sequence]])
-    x_one_hot = tf.one_hot(x,75)
-
-    prediction = model.predict(x_one_hot, verbose=0)[0]
-    next_index = np.argmax(prediction)
-    next_char = index_to_char[next_index]
-    generated_text += next_char
-    print(generated_text)
-print("Generated Text:")
-print(generated_text)
+ 
