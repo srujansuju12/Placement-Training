@@ -1,0 +1,16 @@
+             
+         
+                            
+package pgm5;
+
+public class nested {
+	public static void main(String[]args) {
+		int marks=25;
+		do {
+			do {
+				System.out.println("Fail:" + marks);
+			}while(marks<=9);
+				System.out.println("Pass:"+ marks);
+		}while(marks>=9);
+	}
+}
